@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroService", "MicroService\MicroService.csproj", "{F3643123-0551-4A1D-9951-FF8FFA3D0405}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3643123-0551-4A1D-9951-FF8FFA3D0405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3643123-0551-4A1D-9951-FF8FFA3D0405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3643123-0551-4A1D-9951-FF8FFA3D0405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3643123-0551-4A1D-9951-FF8FFA3D0405}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {046A4784-D44C-4BB7-B7C8-AF2FC3364993}
+	EndGlobalSection
+EndGlobal
