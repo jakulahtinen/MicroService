@@ -19,7 +19,6 @@ namespace MicroService.Services
             while (!stoppingToken.IsCancellationRequested)
             {
                 await FetchElectricityPricesAsync(stoppingToken);
-                //Wait 1 hour to fetch again
                 await Task.Delay(TimeSpan.FromHours(1), stoppingToken);
             }
         }
@@ -35,7 +34,6 @@ namespace MicroService.Services
                 _logger.LogInformation($"Hinnat haettu: {content}");
 
 
-                // Tässä kohtaa voitaisiin välittää data toiselle palvelulle tai tallentaa se
                 var dataProcessingService = new ElectricityDataProcessingService(_httpClientFactory, _logger);
                 await dataProcessingService.ProcessAndSaveElectricityDataAsync(content);
             }
@@ -48,7 +46,7 @@ namespace MicroService.Services
     public class ElectricityDataProcessingService
     {
         private readonly IHttpClientFactory _httpClientFactory;
-        private readonly ILogger<ElectricityPriceFetchingService> _logger; // Muuta tyyppiä tähän
+        private readonly ILogger<ElectricityPriceFetchingService> _logger;
 
         public ElectricityDataProcessingService(IHttpClientFactory httpClientFactory, ILogger<ElectricityPriceFetchingService> logger) // Muuta tyyppiä tähän
         {
@@ -62,10 +60,8 @@ namespace MicroService.Services
 
             try
             {
-                // Päivitä palvelimen osoite
-                var apiUrl = "https://localhost:7277/api/ElectricityData"; // Oletetaan, että palvelin kuuntelee /api/electricitydata-reittiä
 
-                // Voit säätää pyynnön sisältöä ja otsikoita tarpeen mukaan
+                var apiUrl = "https://localhost:7277/api/ElectricityData"; 
                 var content = new StringContent(electricityData, Encoding.UTF8, "application/json");
 
                 var response = await httpClient.PostAsync(apiUrl, content);
